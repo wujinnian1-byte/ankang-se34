@@ -131,6 +131,8 @@ html[data-brand=fizzi] .blindbox-heading h2{font-family:'Songti SC','SimSun',ser
 .blindbox-float{width:100%;height:100%;animation:blindbox-levitate var(--duration) ease-in-out var(--delay) infinite;}
 .blindbox-orb{width:100%;height:100%;background-image:url('/brand/orbs/se34-seven-atlas.png');background-size:400% 200%;background-repeat:no-repeat;filter:drop-shadow(0 18px 22px #3976a530);transition:filter .4s;}
 .blindbox-orb:hover{filter:drop-shadow(0 8px 28px #81cafa66) brightness(1.05);}
+.blindbox-orb[data-se34-video="red-orb"]{display:block;border:0;padding:0;border-radius:50%;appearance:none;background-color:transparent;cursor:pointer;touch-action:manipulation;}
+.blindbox-orb[data-se34-video="red-orb"]:focus-visible{outline:3px solid #34536e;outline-offset:5px;}
 html[data-brand=fizzi] .blindbox-signature{margin:50px 0 0;text-align:center;font-family:'Songti SC','SimSun',serif;font-size:13px;letter-spacing:.5em;color:#64859e;}
 @keyframes blindbox-levitate{0%,100%{transform:translateY(8px) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
 @media(max-width:767px){.blindbox-gallery{padding:58px 12px 35px;}.blindbox-heading p{font-size:8px;letter-spacing:.25em;}.blindbox-heading span{font-size:10px;}.blindbox-sky{aspect-ratio:1/1.38;margin-top:35px;}.blindbox-position{width:36%;}.blindbox-position-0{left:56%;top:0;}.blindbox-position-1{left:9%;top:12%;}.blindbox-position-2{left:0;top:36%;}.blindbox-position-3{left:66%;top:29%;}.blindbox-position-4{left:32%;top:48%;}.blindbox-position-5{left:4%;top:69%;}.blindbox-position-6{left:62%;top:76%;}html[data-brand=fizzi] .blindbox-signature{margin-top:30px;font-size:11px;}}

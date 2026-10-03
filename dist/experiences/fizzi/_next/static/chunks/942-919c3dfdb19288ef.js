@@ -101,7 +101,11 @@ let x=(0,o.forwardRef)((e,t)=>{let{flavor:r="blackCherry",floatSpeed:o=1.5,rotat
         jsx('div', { className: 'blindbox-sky', children: labels.map((label, index) =>
           jsx('div', { className: `blindbox-position blindbox-position-${index}`, children:
             jsx('div', { className: 'blindbox-float', style: { '--delay': `${index * -1.3}s`, '--duration': `${6 + index * .45}s` }, children:
-              jsx('div', { className: 'blindbox-orb', role: 'img', 'aria-label': label,
+              jsx(index === 2 ? 'button' : 'div', { className: 'blindbox-orb',
+                type: index === 2 ? 'button' : undefined, role: index === 2 ? undefined : 'img',
+                'aria-label': index === 2 ? '播放赤色玻璃球视频' : label,
+                'aria-haspopup': index === 2 ? 'dialog' : undefined,
+                'data-se34-video': index === 2 ? 'red-orb' : undefined,
                 style: { backgroundPosition: `${(index % 4) * 100 / 3}% ${index < 4 ? 0 : 100}%` } })
             })
           }, label)) }),

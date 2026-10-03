@@ -2,7 +2,7 @@
   'use strict';
   if (window.parent === window) return;
   const send = data => parent.postMessage(data, location.origin);
-  let velocity = 0, lastTouchTime = 0, momentum = 0;
+  let velocity = 0, lastTouchTime = 0, momentum = 0, modalOpen = false;
   let lastHeight = 0, active = null, touchX = 0, touchY = 0, parentY = 0;
   // Install before each site's runtime, so only the outer document consumes vertical gestures.
   function canConsume(target,delta) {
@@ -14,21 +14,25 @@
     return false;
   }
   window.addEventListener('wheel',e=>{
+    if(modalOpen){e.preventDefault();e.stopImmediatePropagation();return;}
     if(e.ctrlKey||Math.abs(e.deltaX)>Math.abs(e.deltaY)||canConsume(e.target,e.deltaY))return;
     e.preventDefault();e.stopImmediatePropagation();
     send({type:'journey:wheel',delta:e.deltaY*(e.deltaMode===1?18:e.deltaMode===2?innerHeight:1)});
   },{capture:true,passive:false});
-  window.addEventListener('touchstart',e=>{if(e.touches.length===1){cancelAnimationFrame(momentum);velocity=0;lastTouchTime=performance.now();touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;}},{capture:true,passive:true});
+  window.addEventListener('touchstart',e=>{if(modalOpen)return;if(e.touches.length===1){cancelAnimationFrame(momentum);velocity=0;lastTouchTime=performance.now();touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;}},{capture:true,passive:true});
   window.addEventListener('touchmove',e=>{
+    if(modalOpen){e.preventDefault();e.stopImmediatePropagation();return;}
     if(e.touches.length!==1)return;
     const x=e.touches[0].clientX,y=e.touches[0].clientY,delta=touchY-y,dx=touchX-x;
     const now=performance.now();velocity=delta/Math.max(8,now-lastTouchTime);lastTouchTime=now;touchY=y;touchX=x;
     if(Math.abs(dx)>Math.abs(delta)||canConsume(e.target,delta))return;
     e.preventDefault();e.stopImmediatePropagation();send({type:'journey:wheel',delta});
   },{capture:true,passive:false});
-  window.addEventListener('touchend',()=>{if(performance.now()-lastTouchTime>100||Math.abs(velocity)<.15)return;let speed=velocity*16;function coast(){speed*=.93;if(Math.abs(speed)<.4)return;send({type:'journey:wheel',delta:speed});momentum=requestAnimationFrame(coast);}momentum=requestAnimationFrame(coast);},{passive:true});
+  window.addEventListener('touchend',()=>{if(modalOpen||performance.now()-lastTouchTime>100||Math.abs(velocity)<.15)return;let speed=velocity*16;function coast(){speed*=.93;if(modalOpen||Math.abs(speed)<.4)return;send({type:'journey:wheel',delta:speed});momentum=requestAnimationFrame(coast);}momentum=requestAnimationFrame(coast);},{passive:true});
   window.addEventListener('keydown',e=>{
+    if(modalOpen){e.preventDefault();e.stopImmediatePropagation();return;}
     if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+    if(e.key===' '&&e.target.closest('[data-se34-video="red-orb"]'))return;
     // The orb carousel owns its selection keys and native button activation.
     if(e.target.closest('[data-orb-carousel]')&&(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)||(e.key===' '&&e.target.closest('button'))))return;
     const dy={ArrowDown:80,ArrowUp:-80,PageDown:innerHeight*.85,PageUp:-innerHeight*.85,' ':innerHeight*.85}[e.key];
@@ -36,7 +40,9 @@
     if(e.key==='Home'||e.key==='End'){e.preventDefault();send({type:'journey:goto',y:e.key==='Home'?0:document.documentElement.scrollHeight});}
   },true);
   window.addEventListener('message',e=>{
-    if(e.source!==parent||e.origin!==location.origin||e.data?.type!=='journey:position')return;
+    if(e.source!==parent||e.origin!==location.origin)return;
+    if(e.data?.type==='journey:modal-state'){modalOpen=Boolean(e.data.open);cancelAnimationFrame(momentum);velocity=0;return;}
+    if(e.data?.type!=='journey:position'||modalOpen)return;
     parentY=e.data.y;
     if(Math.abs(scrollY-parentY)>1)window.scrollTo({top:parentY,left:0,behavior:'instant'});
     if(active!==e.data.active){
