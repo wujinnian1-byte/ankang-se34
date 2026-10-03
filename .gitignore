@@ -1,0 +1,20 @@
+.sites-runtime/
+output/
+.cache/
+*.tar.gz
+.DS_Store
+.playwright-cli/
+
+# Local dependencies and Python caches; dist/ contains the deployable website.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local environment, hosting association and diagnostics.
+.env
+.env.*
+!.env.example
+*.log
+.openai/hosting.json

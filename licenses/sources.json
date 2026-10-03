@@ -1,0 +1,14 @@
+{
+  "fizzi-Apache-2.0.txt": "https://raw.githubusercontent.com/prismicio-community/course-fizzi-next/main/LICENSE",
+  "react-MIT.txt": "https://raw.githubusercontent.com/facebook/react/v18.3.1/LICENSE",
+  "nextjs-MIT.txt": "https://raw.githubusercontent.com/vercel/next.js/v14.2.35/license.md",
+  "Threejs-MIT.txt": "https://raw.githubusercontent.com/mrdoob/three.js/r167/LICENSE",
+  "jquery-MIT.txt": "https://raw.githubusercontent.com/jquery/jquery/3.5.1/LICENSE.txt",
+  "swiper-MIT.txt": "https://raw.githubusercontent.com/nolimits4web/swiper/v8.4.7/LICENSE",
+  "jquery-ripples-MIT.txt": "https://raw.githubusercontent.com/sirxemic/jquery.ripples/master/LICENSE",
+  "Tailwindcss-MIT.txt": "https://raw.githubusercontent.com/tailwindlabs/tailwindcss/v3.4.10/LICENSE",
+  "Lato-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/lato/OFL.txt",
+  "Poppins-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt",
+  "LexendZetta-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/lexendzetta/OFL.txt",
+  "RobotoFlex-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/robotoflex/OFL.txt"
+}

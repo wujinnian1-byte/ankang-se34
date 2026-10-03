@@ -1,0 +1,17 @@
+{
+  "name": "ankang-se34-brand-experience",
+  "version": "1.0.0",
+  "private": true,
+  "description": "安康硒谷 SE·34 三段连续品牌体验网站",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "start": "npm run dev",
+    "check": "python3 scripts/check.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wujinnian1-byte/ankang-se34.git"
+  },
+  "homepage": "https://wutiantian.cn/ankang/",
+  "license": "SEE LICENSE IN LICENSE_SCOPE.md"
+}

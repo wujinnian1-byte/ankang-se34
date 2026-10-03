@@ -1,0 +1,212 @@
+{
+  "verified_at": "2026-10-03T13:34:39.139996+00:00",
+  "cache_version": "20261003-r4",
+  "method": "Local PNG metadata/alpha/hash inspection, local HTTP GET, installed webpack-module interaction smoke test, static JavaScript/resource checks. No browser UI used.",
+  "assets": [
+    {
+      "color": "silver",
+      "file": "dist/brand/orbs/orb-silver.png",
+      "bytes": 2229789,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 589882,
+      "partial_alpha_pixels": 981713,
+      "alpha_128_bbox": [
+        58,
+        79,
+        1184,
+        1186
+      ],
+      "display_scale": 0.95606,
+      "display_alpha_bbox": [
+        1076.52,
+        1058.36
+      ],
+      "sha256": "e0af47e0d05be06ec00528aabbc5869cd2bd5ff16e672a0a9839bd57bf9bac42",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-silver.png?v=20261003-r4",
+      "matches_design_source": true
+    },
+    {
+      "color": "blue",
+      "file": "dist/brand/orbs/orb-blue.png",
+      "bytes": 2212843,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 593423,
+      "partial_alpha_pixels": 978358,
+      "alpha_128_bbox": [
+        67,
+        57,
+        1185,
+        1165
+      ],
+      "display_scale": 0.96289,
+      "display_alpha_bbox": [
+        1076.51,
+        1066.88
+      ],
+      "sha256": "be7931622e7e5fb45698bae9cb9c4ac02a1527cf1e51abd74480307a9a7922d8",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-blue.png?v=20261003-r4",
+      "matches_design_source": true
+    },
+    {
+      "color": "amber",
+      "file": "dist/brand/orbs/orb-amber.png",
+      "bytes": 2299272,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 552455,
+      "partial_alpha_pixels": 1019585,
+      "alpha_128_bbox": [
+        40,
+        51,
+        1189,
+        1178
+      ],
+      "display_scale": 0.93777,
+      "display_alpha_bbox": [
+        1077.5,
+        1056.87
+      ],
+      "sha256": "ee1a13560b9f8d270693d0af92b23d80d314223d41ddbde27b319e8382f421dd",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-amber.png?v=20261003-r4",
+      "matches_design_source": true
+    },
+    {
+      "color": "red",
+      "file": "dist/brand/orbs/orb-red.png",
+      "bytes": 2192754,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 545745,
+      "partial_alpha_pixels": 1026127,
+      "alpha_128_bbox": [
+        48,
+        60,
+        1196,
+        1200
+      ],
+      "display_scale": 0.93859,
+      "display_alpha_bbox": [
+        1077.5,
+        1069.99
+      ],
+      "sha256": "e4b8eec9f0842e420dd22fb4da597a4f88e9bc5d80d49df4fd22442d24dfe4b6",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-red.png?v=20261003-r4",
+      "matches_design_source": true
+    },
+    {
+      "color": "green",
+      "file": "dist/brand/orbs/orb-green.png",
+      "bytes": 2477042,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 525579,
+      "partial_alpha_pixels": 1046233,
+      "alpha_128_bbox": [
+        47,
+        62,
+        1206,
+        1199
+      ],
+      "display_scale": 0.92969,
+      "display_alpha_bbox": [
+        1077.51,
+        1057.06
+      ],
+      "sha256": "97a92faade299c44a749a63d349935c3d0f6a31242008a77456fe2da7bd8b440",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-green.png?v=20261003-r4",
+      "matches_design_source": true
+    },
+    {
+      "color": "purple",
+      "file": "dist/brand/orbs/orb-purple.png",
+      "bytes": 2202470,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 623307,
+      "partial_alpha_pixels": 948300,
+      "alpha_128_bbox": [
+        76,
+        87,
+        1174,
+        1163
+      ],
+      "display_scale": 0.98129,
+      "display_alpha_bbox": [
+        1077.46,
+        1055.87
+      ],
+      "sha256": "7ab19dbc4b9229cd211b1b039c73afd531d74f391005734bf698fe56a2185b4d",
+      "http_status": 200,
+      "http_content_type": "image/png",
+      "url_path": "brand/orbs/orb-purple.png?v=20261003-r4",
+      "matches_design_source": true
+    }
+  ],
+  "normalized_core_width_spread_px": 1.0,
+  "other_http_resources": {
+    "brand/orb-carousel.css?v=20261003-r4": 200,
+    "experiences/fizzi/_next/static/chunks/942-919c3dfdb19288ef.js?v=20261003-r4": 200,
+    "experiences/fizzi/": 200
+  },
+  "checks": {
+    "installed_module_interaction_smoke": "pass",
+    "npm_run_check": "pass, zero errors",
+    "ssr_initial_scale_and_r4_links": "pass",
+    "public_manifest_paths_and_privacy": "pass",
+    "non_carousel_runtime_modules_unchanged": "pass"
+  }
+}

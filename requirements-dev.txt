@@ -1,0 +1,2 @@
+# Required by scripts/check.py; the static website has no Python runtime dependency.
+beautifulsoup4==4.14.3

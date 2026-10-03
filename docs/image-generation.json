@@ -1,0 +1,94 @@
+{
+  "brand": "安康硒谷",
+  "product": "SE·34 透明银盖款",
+  "generation_mode": "built-in image_gen",
+  "reference": "dist/brand/se34-original.png",
+  "assets": [
+    {
+      "id": "se34-product-cutout",
+      "transparent_background": true,
+      "prompt": "Use case: background-extraction.\nAsset type: transparent PNG product asset for a premium bottled water website.\nInput image 1 is the EDIT TARGET and exact product identity reference.\nPrimary request: remove only the surroundings, ground, distant mountains, atmospheric background and external cast shadow from the supplied photo. Deliver ONE faithful complete SE·34 glass water bottle as a clean cutout on genuine transparent alpha, with its entire silver cap and base visible and a small transparent margin all around. Preserve the bottle's original elegant very slender elongated droplet silhouette, the narrowing neck, the organically tapered mirror chrome silver cap, all clear glass thickness, reflective edges, water, refraction and the mountain relief sculpted inside the lower part of the glass. Preserve the circular metallic medallion reading \"Se\" over \"34\", and the lower label exactly \"SE·34\", matching reference position, type and spacing. Preserve all existing small original bottle text without inventing text. The bottle must remain the same bottle, with accurate narrow proportions and no redesign.\nComposition: tall portrait canvas, complete bottle upright centered, no clipped cap or base. The transparent glass interior must transmit transparency realistically while retaining necessary product highlights and refractions. Do not bake the source mountain background into the bottle interior. Clean natural antialiased edges, premium photographic material fidelity.\nConstraints: change only background and what is seen through clear glass to true transparency; no added bottle, no duplicate product, no plastic material, no new label or typography, no pedestal, no surface, no gray checkerboard pixels, no watermark.",
+      "saved_path": "dist/brand/se34-bottle.png",
+      "visual_check": "完整单瓶；保留细长水滴形玻璃轮廓、镀铬银盖、Se/34圆标、SE·34主字样、下部山峰纹理。外背景透明。少量玻璃边缘彩色反射与细字属于生成重建，非像素级原图抠图。",
+      "file_check": {
+        "size": [
+          992,
+          1586
+        ],
+        "mode": "RGBA",
+        "format": "PNG",
+        "bytes": 938451,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "fully_transparent_pixels": 1095306,
+        "partly_transparent_pixels": 478005,
+        "opaque_pixels": 1
+      },
+      "original_generation_filename": "exec-a37466de-f1a8-4bf1-85c2-e2f9cd531c7a.png",
+      "original_working_filename": "se34-product-cutout.png",
+      "sha256": "ff96dcc691f7e7542153eb02aed586797e1c189b4dc10635d3851eda19704e1c"
+    },
+    {
+      "id": "se34-cafe-woman",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: premium lifestyle website photograph with natural buyer-style atmosphere, explicitly a staged brand visual, not a testimonial.\nInput image 1 is the exact SE·34 PRODUCT IDENTITY REFERENCE; recreate this same distinctive glass bottle faithfully in the scene.\nScene: a young East Asian adult woman, about 27 years old, sitting beside a large window in a refined contemporary cafe. She holds ONE SE·34 glass water bottle comfortably in one hand at tabletop height, relaxed candid expression and subtle smile, looking toward a friend outside the frame. Understated everyday clothing, naturally styled hair, believable skin texture, warm neutral cafe materials.\nComposition: portrait 4:5, medium shot with her upper body, hand and full bottle clearly visible; calm spacious framing, the bottle label and silhouette readable. The bottle is realistically sized at approximately 28 cm tall in relation to her adult hand, never huge.\nProduct invariants: the reference bottle's extremely slender elongated teardrop glass body, narrowing neck, tapered polished silver chrome cap, clear water, circular metallic \"Se\" over \"34\" medallion in the middle, lower text \"SE·34\", and sculpted mountain relief in the lower glass; preserve exact product design, avoid a cylindrical or generic plastic bottle. Her fingers grip the bottle naturally without hiding the main medallion or lower brand label.\nStyle: authentic natural customer-snapshot feeling elevated with boutique editorial photography, soft window daylight, realistic optics, gentle depth of field, tactile candid realism without airbrushed glamour.\nConstraints: no added words, no overlaid text, no quote, no review stars, no testimonial attribution, no watermark, no text in the cafe background, no fake customer endorsement. Only the original product branding is allowed. Natural correct hands and fingers.",
+      "saved_path": "dist/brand/lifestyle-1.png",
+      "visual_check": "自然成人生活场景，产品完整可辨，手指与握持基本自然；保留主瓶型、银盖、圆标、SE·34及山峰底部，无叠加文案、评价、水印。用于AI生成品牌场景，不标注为真实客户证言。",
+      "file_check": {
+        "size": [
+          1122,
+          1402
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "bytes": 2000428
+      },
+      "original_generation_filename": "exec-2778f2e3-5582-4159-8dde-9062e06b3116.png",
+      "original_working_filename": "se34-cafe-woman.png",
+      "sha256": "ff17b1ebf6f1192d3be9251d2010dc1f40e13541713e3935b4bf334763529821"
+    },
+    {
+      "id": "se34-lakeside-hiker",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: premium lifestyle website photograph with natural buyer-style atmosphere, explicitly a staged brand visual, not a testimonial.\nInput image 1 is the exact SE·34 PRODUCT IDENTITY REFERENCE; recreate this same distinctive glass bottle faithfully in the scene.\nScene: an East Asian adult man about 32 years old, a casual hiker, resting on a lakeside rock with mountains in the distance. Understated earthy hiking clothes and a backpack beside him, natural outdoor posture and a calm expression. He holds ONE SE·34 glass water bottle comfortably in his hand near his knee, as if pausing on a walk.\nComposition: portrait 4:5, medium environmental shot, hand and full upright bottle visible with unobstructed medallion and brand. The bottle is realistically about 28 cm tall relative to his adult hand, narrow and elegant, not exaggerated. Clear sunlit lake and natural mountains softly receding behind him.\nProduct invariants: precisely retain the reference bottle's very slender elongated droplet glass body, narrow neck, organically tapered mirrored chrome silver cap, clear water, circular metallic medallion reading \"Se\" over \"34\", lower text \"SE·34\", and sculpted mountain relief inside the lower glass. It is the same glass bottle, never ordinary plastic or a sports bottle. Product scale, hand grip and perspective physically convincing.\nStyle: candid natural daylight photograph with premium editorial quality, realistic skin and fabric texture, gentle sun, fresh open-air atmosphere, no glossy artificial CGI.\nConstraints: no added text, no caption, no reviews, no stars, no testimonial attribution, no watermark, no spurious logos. Only original bottle branding is allowed. Anatomically natural hands and fingers.",
+      "saved_path": "dist/brand/lifestyle-2.png",
+      "visual_check": "自然成人生活场景，产品完整可辨，手指与握持基本自然；保留主瓶型、银盖、圆标、SE·34及山峰底部，无叠加文案、评价、水印。用于AI生成品牌场景，不标注为真实客户证言。",
+      "file_check": {
+        "size": [
+          1122,
+          1402
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "bytes": 2221922
+      },
+      "original_generation_filename": "exec-fb13422a-fa72-4a34-9d81-1745fddc636c.png",
+      "original_working_filename": "se34-lakeside-hiker.png",
+      "sha256": "fa1d0756d4353a1d710ea0e716ceca96a3225fba8c6bd16c548ccb6870c2df10"
+    },
+    {
+      "id": "se34-terrace-friends",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: premium lifestyle website photograph with natural buyer-style atmosphere, explicitly a staged brand visual, not a testimonial.\nInput image 1 is the exact SE·34 PRODUCT IDENTITY REFERENCE; faithfully recreate the same distinctive glass water bottle.\nScene: two East Asian adult friends, one woman and one man about 28 to 35 years old, enjoying a relaxed terrace dinner at early evening. Warm quiet joy, sharing conversation and a small laugh, elegant simple everyday clothing, naturally candid body language. A refined but believable dinner table with understated plates, a few dishes and clear water glasses. ONE capped SE·34 bottle stands on the table visibly between them, with the full bottle clearly unobscured.\nComposition: landscape 3:2, an intimate medium environmental view, both friends, tabletop and full bottle visible; subtle evening terrace atmosphere and soft distant architecture, avoid elaborate luxury props. Bottle realistically approximately 28 cm tall and narrow, properly scaled relative to adults, plates and glasses.\nProduct invariants: the exact reference's unusually slender elongated teardrop clear glass silhouette, narrow neck, organically tapered mirror-polished silver chrome cap, transparent water, round metal \"Se\" above \"34\" medallion, lower \"SE·34\" label, and molded mountain relief in the lower glass. Keep faithful material, proportions and branding. Do not substitute generic plastic or standard cylindrical glass packaging.\nStyle: spontaneous buyer-style lifestyle moment with tasteful editorial photographic finish; dusk daylight and gentle warm table light, realistic skin and glass reflections, restrained color, believable human expressions.\nConstraints: no added words, no captions, no review text or stars, no testimonial attribution, no watermark, no visible background signs. Original bottle branding only. No oversized bottle and no duplicate bottles.",
+      "saved_path": "dist/brand/lifestyle-3.png",
+      "visual_check": "自然成人生活场景，产品完整可辨，手指与握持基本自然；保留主瓶型、银盖、圆标、SE·34及山峰底部，无叠加文案、评价、水印。用于AI生成品牌场景，不标注为真实客户证言。",
+      "file_check": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "format": "PNG",
+        "bytes": 2109113
+      },
+      "original_generation_filename": "exec-e31658f3-5933-49e0-a8c8-c358c239ded6.png",
+      "original_working_filename": "se34-terrace-friends.png",
+      "sha256": "a5251cef3e6e6c9b7bfa47470f296279f7a9241ae1e747b88b75211083b61841"
+    }
+  ],
+  "path_base": "repository root",
+  "reference_original_filename": "微信图片_20261003143141_120_5907.png",
+  "provenance_note": "用户提供的原图与生成素材以字节一致的副本收录在仓库内；保留原文件名与完整生成提示词，原制作机缓存路径不再作为文件引用。"
+}

@@ -1,0 +1,87 @@
+html{font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+/* The existing layouts and animations remain intact; identities and product imagery are personal. */
+html[data-brand=serrana] .nav-logo{min-width:116px;width:140px;height:76px;object-fit:contain}
+html[data-brand=serrana] .image-26{width:110px;height:60px;object-fit:contain}
+html[data-brand=serrana] .image-22{width:200px!important;height:auto!important}
+html[data-brand=serrana] .text-block,html[data-brand=serrana] .heading-4,html[data-brand=serrana] .heading-5{font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+html[data-brand=serrana] .agua.water{object-fit:contain}
+html[data-brand=serrana] .big-green{font-family:"PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.04em;font-size:8vw}
+html[data-brand=serrana] .video-cover{object-fit:cover}
+html[data-brand=serrana] .div-block-9>div:has(a[href^="https"]){display:none}
+/* Replace the original brand logos without changing their measured navigation boxes. */
+html[data-brand=baikal] [class*=Header_rootLogo] svg,html[data-brand=baikal] [class*=MobileMenu_rootLogo] svg{visibility:hidden}
+html[data-brand=baikal] [class*=Header_rootLogo]::after,html[data-brand=baikal] [class*=MobileMenu_rootLogo]::after{content:'安康硒谷';position:absolute;inset:0;display:grid;place-items:center;font:500 clamp(18px,2vw,32px)/1.2 "PingFang SC",sans-serif;letter-spacing:.18em;white-space:nowrap}
+html[data-brand=baikal] [class*=Header_rootLogo]{position:relative}
+html[data-brand=baikal] [class*=LangSwitcher],html[data-brand=baikal] [class*=Language],html[data-brand=baikal] [class*=Cookie],html[data-brand=baikal] [class*=Footer_rootContacts],html[data-brand=baikal] [class*=Footer_rootSocial],html[data-brand=baikal] [class*=Footer_rootBottom],html[data-brand=baikal] [class*=Footer_rootImage],html[data-brand=baikal] [class*=Footer_rootContent],html[data-brand=baikal] [class*=MobileMenu_rootContacts],html[data-brand=baikal] [class*=VerticalSlider_root],html[data-brand=baikal] [class*=Table_root],html[data-brand=baikal] [class*=TextInfographic_root],html[data-brand=baikal] [class*=Formats_rootList],html[data-brand=baikal] [class*=Formats_rootBottom]{display:none!important}
+html[data-brand=baikal] [class*=Lead_rootVideo]{background:#172633}
+html[data-brand=baikal] video[class*=Lead_rootVideo]{visibility:hidden}
+html[data-brand=baikal] [class*=Lead_rootVideoWrapper]::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#182b3c22,#182b3c11),url('/brand/se34-original.png') center 52%/cover;z-index:0}
+html[data-brand=baikal] [class*=FormatsCard_rootImage] img{object-fit:contain!important}
+html[data-brand=baikal] [class*=DepthRange_rootImage],html[data-brand=baikal] [class*=DepthRange_rootRangesImage]{opacity:0}
+html[data-brand=baikal] [class*=DepthRange_rootValues]{display:none!important}
+html[data-brand=baikal] [class*=SliderGallery_rootTitle]{font-size:18px;letter-spacing:.08em}
+html[data-brand=baikal] [class*=Footer_root___]{min-height:350px;background:#e9edf0;padding:0}
+html[data-brand=baikal] [class*=About_root] [class*=Image]{opacity:0}
+html[data-brand=baikal] [class*=About_root]{background:#e2eaf0}
+html[data-brand=fizzi] header>svg,html[data-brand=fizzi] footer svg{display:none}
+html[data-brand=fizzi] header::after{content:'安康硒谷';position:relative;z-index:10;height:80px;display:flex;align-items:center;font:700 clamp(28px,3vw,48px)/1 "PingFang SC",sans-serif;letter-spacing:.12em;color:#075985}
+html[data-brand=fizzi] footer>div{min-height:220px;align-items:center}
+html[data-brand=fizzi] footer>div::after{content:'SE · 34';font:900 clamp(90px,18vw,260px)/1 Arial,sans-serif;letter-spacing:-.04em}
+html[data-brand=fizzi] h2{font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+html[data-brand=fizzi] p{font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.brand-footer{position:relative;padding:85px 6vw 75px;text-align:center;color:#1d3447;font-family:"PingFang SC",sans-serif;z-index:2}
+.brand-footer strong{display:block;font-size:clamp(28px,5vw,56px);font-weight:400;letter-spacing:.2em}
+.brand-footer p{margin:20px 0 0;line-height:1.8;letter-spacing:.18em;font-size:14px}
+.brand-footer small{display:block;margin-top:36px;opacity:.55;font-size:12px}
+@media(max-width:767px){html[data-brand=serrana] .heading-4{font-size:30px}html[data-brand=baikal] [class*=Header_rootLogo]::after{font-size:22px}html[data-brand=fizzi] h1{font-size:clamp(58px,19vw,110px)!important}.brand-footer{padding:55px 20px}}
+/* Keep the taller glass silhouette within the first viewport while its original scroll transform runs. */
+html[data-brand=serrana] .sticky-desktop .agua.water{height:55vh!important;width:auto!important;max-width:none!important;top:24vh!important;left:50%!important;right:auto!important;margin-left:-17.2vh!important}
+html[data-brand=serrana] .sticky-desktop .texto{position:absolute!important;top:43vh!important;left:0!important;width:100%!important;z-index:1}
+html[data-brand=serrana] .mobile-wrapper .agua.water{height:58svh!important;width:auto!important;max-width:none!important;top:20svh!important;left:50%!important;right:auto!important;margin-left:-18.1svh!important}
+html[data-brand=serrana] .mobile-wrapper .texto{top:38svh!important}
+html[data-brand=serrana] .sticky-desktop .agua.water{left:calc(50% - 17.2vh)!important;margin-left:0!important;margin-right:0!important}
+html[data-brand=serrana] .mobile-wrapper .agua.water{left:calc(50% - 18.1svh)!important;margin-left:0!important;margin-right:0!important}
+html[data-brand=baikal] [class*=Lead_rootVideoWrapper]::after{background:url('/brand/se34-bottle.png') center 50%/auto 95% no-repeat,radial-gradient(ellipse at 65% 20%,#bdceda 0%,#8196a8 44%,#344e64 100%)}
+html[data-brand=baikal] [class*=Header_rootLogo]{position:absolute!important;left:50%!important;top:28px!important;transform:translateX(-50%)!important;width:229px!important;height:34px!important}
+html[data-brand=baikal] [class*=Header_rootLogo]::after{font-size:28px}
+html[data-brand=baikal] [class*=SwitchLocale],html[data-brand=baikal] [class*=LanguageSwitch],html[data-brand=baikal] [class*=Lang_root]{display:none!important}
+@media(max-width:767px){html[data-brand=baikal] [class*=Header_rootLogo]{top:20px!important;width:160px!important}html[data-brand=baikal] [class*=Header_rootLogo]::after{font-size:22px}}
+
+html[data-brand=serrana],html[data-brand=serrana] body{overflow-x:clip!important}
+
+/* Full bottle fits inside the reference's animated capsule crop. */
+html[data-brand=baikal] [class*=Lead_rootVideoWrapper]::after{background-size:auto 66%,cover}
+html[data-brand=baikal] [class*=Header_rootContent]{position:relative!important}
+html[data-brand=baikal] [class*=LocaleSwitcher]{display:none!important}
+
+@media(max-width:767px){
+  html[data-brand=fizzi] .hero>.mx-auto>.grid>.grid:first-child{position:relative;align-items:end;padding-bottom:105px;}
+  html[data-brand=fizzi] .hero>.mx-auto>.grid>.grid:first-child::before{content:'';position:absolute;top:65px;left:0;width:100%;height:37svh;background:url('/brand/se34-bottle.png') center/auto 100% no-repeat;pointer-events:none;animation:se34-mobile-float 6s ease-in-out infinite;}
+  html[data-brand=fizzi] .hero h1{font-size:52px!important;line-height:.85;}
+  html[data-brand=fizzi] .hero-subheading{font-size:28px;line-height:1.3;margin-top:24px;}
+  html[data-brand=fizzi] .hero-body{font-size:16px;margin-top:12px;}
+  html[data-brand=fizzi] .hero-button{margin-top:25px;font-size:17px;padding:13px 25px;}
+}
+@keyframes se34-mobile-float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-12px) rotate(7deg)}}
+@media(prefers-reduced-motion:reduce){html[data-brand=fizzi] .hero>.mx-auto>.grid>.grid:first-child::before{animation:none}}
+
+html[data-brand=baikal] [class*=Lead_rootVideoWrapper]::after{background-position:center 39%,center;background-size:auto 54%,cover}
+
+html[data-brand=baikal] [class*=Header_rootLogo]{margin:0!important;right:auto!important;top:50%!important;transform:translate(-50%,-50%)!important}
+
+/* The user's original design board, cropped in layout to omit phone controls. */
+html[data-brand=baikal] .se34-design-section{min-height:0!important;padding:72px 24px!important;background:#e2eaf0;}
+html[data-brand=baikal] .se34-design-section .About_rootWrapper__xYlV3{max-width:945px;width:100%;gap:0;}
+html[data-brand=baikal] .se34-design-section .About_rootCard__IBh8P,
+html[data-brand=baikal] .se34-design-section .About_rootCardWrapper__ynsIK{height:auto;width:100%;padding:0;gap:0;}
+.se34-design-board{position:relative;overflow:hidden;width:100%;aspect-ratio:945/864;margin:0;}
+.se34-design-board img{position:absolute;left:0;top:-68.51851852%;display:block;width:100%!important;max-width:none!important;height:auto!important;opacity:1!important;}
+@media(max-width:767px){html[data-brand=baikal] .se34-design-section{padding:32px 12px!important;}}
+
+html[data-brand=baikal] footer>:not(.brand-footer){display:none!important}
+
+/* Neutral background for the final three bottle-story panels and their page base. */
+html[data-brand=fizzi],
+html[data-brand=fizzi] body,
+html[data-brand=fizzi] .alternating-text-container,
+html[data-brand=fizzi] .bg-yellow-300{background-color:#e5e7e9!important;}

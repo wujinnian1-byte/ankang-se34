@@ -1,0 +1,346 @@
+{
+  "generation_mode": "built-in image_gen",
+  "assets": [
+    {
+      "id": "orb-silver",
+      "color": "silver",
+      "reference": "User-provided silver orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-silver.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its neutral clear SILVER glass; do not introduce blue, purple, yellow or other colored tint, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-silver.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2229789,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 589882,
+        "alpha_partial_pixels": 981713,
+        "alpha_opaque_pixels": 921,
+        "alpha_bbox": [
+          52,
+          74,
+          1192,
+          1192
+        ],
+        "alpha_core_bbox": [
+          57,
+          78,
+          1185,
+          1186
+        ],
+        "core_padding_percent": [
+          4.55,
+          6.22,
+          5.5,
+          5.42
+        ]
+      },
+      "visual_review": {
+        "status": "pass_with_padding_variance",
+        "observations": [
+          "完整轮廓、色彩、玻璃旋流、Se/34徽章保留。",
+          "外围文字、背景与地面倒影已去除。",
+          "真实alpha透明通道，边缘保留自然半透明反射。",
+          "透明边距约3–7%，略少于6–8%目标，实际边界已记录。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.95606,
+      "sha256": "e0af47e0d05be06ec00528aabbc5869cd2bd5ff16e672a0a9839bd57bf9bac42",
+      "applied_component_scale": 0.95606
+    },
+    {
+      "id": "orb-blue",
+      "color": "blue",
+      "reference": "User-provided blue orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-blue.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its deep clear sapphire BLUE glass with the exact pale-blue and silver highlights in the source; do not change to cyan or purple, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-blue.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2212843,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 593423,
+        "alpha_partial_pixels": 978358,
+        "alpha_opaque_pixels": 735,
+        "alpha_bbox": [
+          0,
+          5,
+          1222,
+          1224
+        ],
+        "alpha_core_bbox": [
+          66,
+          57,
+          1186,
+          1165
+        ],
+        "core_padding_percent": [
+          5.26,
+          4.55,
+          5.42,
+          7.1
+        ]
+      },
+      "visual_review": {
+        "status": "pass_with_padding_variance",
+        "observations": [
+          "完整轮廓、色彩、玻璃旋流、Se/34徽章保留。",
+          "外围文字、背景与地面倒影已去除。",
+          "真实alpha透明通道，边缘保留自然半透明反射。",
+          "透明边距约3–7%，略少于6–8%目标，实际边界已记录。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.96289,
+      "sha256": "be7931622e7e5fb45698bae9cb9c4ac02a1527cf1e51abd74480307a9a7922d8",
+      "applied_component_scale": 0.96289
+    },
+    {
+      "id": "orb-amber",
+      "color": "amber",
+      "reference": "User-provided amber orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-amber.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its warm transparent AMBER/GOLD glass with the exact honey-gold and silver highlights in the source; do not change to yellow plastic, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-amber.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2299272,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 552455,
+        "alpha_partial_pixels": 1019585,
+        "alpha_opaque_pixels": 476,
+        "alpha_bbox": [
+          33,
+          45,
+          1192,
+          1190
+        ],
+        "alpha_core_bbox": [
+          39,
+          51,
+          1189,
+          1179
+        ],
+        "core_padding_percent": [
+          3.11,
+          4.07,
+          5.18,
+          5.98
+        ]
+      },
+      "visual_review": {
+        "status": "pass_with_padding_variance",
+        "observations": [
+          "完整轮廓、色彩、玻璃旋流、Se/34徽章保留。",
+          "外围文字、背景与地面倒影已去除。",
+          "真实alpha透明通道，边缘保留自然半透明反射。",
+          "透明边距约3–7%，略少于6–8%目标，实际边界已记录。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.93777,
+      "sha256": "ee1a13560b9f8d270693d0af92b23d80d314223d41ddbde27b319e8382f421dd",
+      "applied_component_scale": 0.93777
+    },
+    {
+      "id": "orb-red",
+      "color": "red",
+      "reference": "User-provided red orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-red.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its deep transparent RUBY RED glass with the exact red and silver highlights in the source; do not change to pink or orange, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-red.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2192754,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 545745,
+        "alpha_partial_pixels": 1026127,
+        "alpha_opaque_pixels": 644,
+        "alpha_bbox": [
+          45,
+          56,
+          1206,
+          1210
+        ],
+        "alpha_core_bbox": [
+          48,
+          59,
+          1197,
+          1200
+        ],
+        "core_padding_percent": [
+          3.83,
+          4.7,
+          4.55,
+          4.31
+        ]
+      },
+      "visual_review": {
+        "status": "pass_with_padding_variance",
+        "observations": [
+          "完整轮廓、色彩、玻璃旋流、Se/34徽章保留。",
+          "外围文字、背景与地面倒影已去除。",
+          "真实alpha透明通道，边缘保留自然半透明反射。",
+          "透明边距约3–7%，略少于6–8%目标，实际边界已记录。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.93859,
+      "sha256": "e4b8eec9f0842e420dd22fb4da597a4f88e9bc5d80d49df4fd22442d24dfe4b6",
+      "applied_component_scale": 0.93859
+    },
+    {
+      "id": "orb-green",
+      "color": "green",
+      "reference": "User-provided green orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-green.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its deep transparent EMERALD GREEN glass with the exact subtle green and silver highlights in the source; do not brighten it to neon green, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-green.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2477042,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 525579,
+        "alpha_partial_pixels": 1046233,
+        "alpha_opaque_pixels": 704,
+        "alpha_bbox": [
+          0,
+          39,
+          1210,
+          1254
+        ],
+        "alpha_core_bbox": [
+          47,
+          62,
+          1207,
+          1199
+        ],
+        "core_padding_percent": [
+          3.75,
+          4.94,
+          3.75,
+          4.39
+        ]
+      },
+      "visual_review": {
+        "status": "pass_with_padding_variance",
+        "observations": [
+          "完整轮廓、色彩、玻璃旋流、Se/34徽章保留。",
+          "外围文字、背景与地面倒影已去除。",
+          "真实alpha透明通道，边缘保留自然半透明反射。",
+          "透明边距约3–7%，略少于6–8%目标，实际边界已记录。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.92969,
+      "sha256": "97a92faade299c44a749a63d349935c3d0f6a31242008a77456fe2da7bd8b440",
+      "applied_component_scale": 0.92969
+    },
+    {
+      "id": "orb-purple",
+      "color": "purple",
+      "reference": "User-provided purple orb reference; not included in public repository.",
+      "saved_path": "dist/brand/orbs/orb-purple.png",
+      "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its clear rich VIOLET/PURPLE glass with the exact purple luminous rim and silver highlights in the source; do not change to blue or pink, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+      "source_project_path": "design-source/orbs/orb-purple.png",
+      "file_check": {
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "bytes": 2202470,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "alpha_zero_pixels": 623307,
+        "alpha_partial_pixels": 948300,
+        "alpha_opaque_pixels": 909,
+        "alpha_bbox": [
+          63,
+          41,
+          1196,
+          1178
+        ],
+        "alpha_core_bbox": [
+          75,
+          87,
+          1174,
+          1164
+        ],
+        "core_padding_percent": [
+          5.98,
+          6.94,
+          6.38,
+          7.18
+        ]
+      },
+      "attempts": [
+        {
+          "prompt": "Use case: background-extraction.\nAsset type: one genuinely transparent PNG cutout of the supplied SE34 glass orb, for a website product carousel.\nInput image 1 is the EDIT TARGET. This is a faithful background-removal edit of the specific orb in that image, not a redesign or a new product.\nPrimary request: extract ONLY the single complete round glass orb, preserving exactly its shape, its clear rich VIOLET/PURPLE glass with the exact purple luminous rim and silver highlights in the source; do not change to blue or pink, fluid swirling glass structure, silver streaks, transparent depth, refractions, embedded tiny bubbles, and the central round silver metallic badge. Preserve the badge's original placement, proportions and brushed metallic lighting. Preserve exactly the silver serif text \"Se\" on the upper line and \"34\" on the lower line — uppercase S, lowercase e, then 3 and 4. Do not change the lettering or the medallion.\nRemove the entire outside background, all floor and ground reflection, all cast shadow underneath, all outside glow haze, and all peripheral words and branding outside the orb. The only visible text remaining must be the original \"Se\" and \"34\" on the orb's badge. Do not include any backdrop or caption.\nComposition and consistent batch framing: output ONE square image canvas. Center the orb precisely, front-facing in the same orientation as the source. The COMPLETE circular silhouette must fit fully within the canvas, diameter about 86% of canvas width AND height, with approximately 7% fully transparent padding on every side. Match this standard scale for the six-color set. Do not crop its outer glass edge or enlarge the orb to touch the frame. No rotation or perspective change.\nTransparency: actual alpha transparency outside the object's contour, not a painted checkerboard or black/white/gray background. Keep the crisp antialiased outer glass edge and the product's original glass highlights. Preserve the source's internal color, swirling form and material; do not wash out the orb, erase its dark internal refractions, or turn it into a flat disc. The central metal badge remains solid and readable.\nConstraints: no newly invented objects, no extra sphere, no bottle, no stand, no floor, no jewelry loop, no chain, no hands, no new text, no watermark, no added border. Change only background removal and square-canvas framing; faithfully preserve the orb's existing color, shape, glass details and Se/34 identity.",
+          "included_in_repository": false
+        },
+        {
+          "prompt": "Use case: background-extraction / precise-object-edit.\nInput image 1 is the EDIT TARGET: the already extracted purple Se34 glass orb. Input image 2 is the ORIGINAL PRODUCT REFERENCE to preserve appearance.\nCorrect ONLY the remaining outside-edge alpha artifacts and framing. The extracted orb has a few light purple/white cloudy protrusions OUTSIDE its smooth circular glass silhouette, particularly above the top at about 11 and 1 o'clock, on both sides, and near lower left. Remove those exterior flare patches entirely to zero alpha. The physical glass silhouette must become smooth, clean, complete and circular, with no cloudlike blobs, ragged alpha artifacts, glow halo or detached pixels outside it. Keep the sharp violet highlight ON the glass rim but no glow extending off the glass.\nKeep every actual product detail unchanged: purple color, silver swirls, transparent glass interior, bubbles, metal circular center badge, and EXACT original serif lettering \"Se\" over \"34\". Do not repaint, relight, recolor, alter or reinvent the orb. Do not flatten or blur its detailed interior.\nCenter the whole clean-cut orb on a SQUARE truly transparent canvas at diameter 86% of canvas size, leaving 7% fully transparent empty margin on ALL four sides. Complete outline visible, not cropped. This is solely alpha-edge cleanup and standard framing.\nBackground must be real transparent alpha, not black, white or checkerboard. No shadow, no floor reflection, no ground, no words outside the badge, no outer glow, no extra content. The only opaque/partly opaque content is the existing orb and its sharp physical glass boundary.",
+          "reason": "Remove residual outside purple glow and alpha protrusions; tool retained faint glow after one targeted edit.",
+          "included_in_repository": true,
+          "source_project_path": "design-source/orbs/orb-purple.png"
+        }
+      ],
+      "final_prompt": "Use case: background-extraction / precise-object-edit.\nInput image 1 is the EDIT TARGET: the already extracted purple Se34 glass orb. Input image 2 is the ORIGINAL PRODUCT REFERENCE to preserve appearance.\nCorrect ONLY the remaining outside-edge alpha artifacts and framing. The extracted orb has a few light purple/white cloudy protrusions OUTSIDE its smooth circular glass silhouette, particularly above the top at about 11 and 1 o'clock, on both sides, and near lower left. Remove those exterior flare patches entirely to zero alpha. The physical glass silhouette must become smooth, clean, complete and circular, with no cloudlike blobs, ragged alpha artifacts, glow halo or detached pixels outside it. Keep the sharp violet highlight ON the glass rim but no glow extending off the glass.\nKeep every actual product detail unchanged: purple color, silver swirls, transparent glass interior, bubbles, metal circular center badge, and EXACT original serif lettering \"Se\" over \"34\". Do not repaint, relight, recolor, alter or reinvent the orb. Do not flatten or blur its detailed interior.\nCenter the whole clean-cut orb on a SQUARE truly transparent canvas at diameter 86% of canvas size, leaving 7% fully transparent empty margin on ALL four sides. Complete outline visible, not cropped. This is solely alpha-edge cleanup and standard framing.\nBackground must be real transparent alpha, not black, white or checkerboard. No shadow, no floor reflection, no ground, no words outside the badge, no outer glow, no extra content. The only opaque/partly opaque content is the existing orb and its sharp physical glass boundary.",
+      "visual_review": {
+        "status": "usable_with_residual_rim_glow",
+        "observations": [
+          "Se/34、紫色旋流玻璃纹理、完整轮廓保留。",
+          "真实透明alpha已验证。",
+          "一次针对性修正后仍保留少量低alpha紫色外沿辉光，没有继续重复生成。",
+          "没有地面倒影、外围文字或实色矩形背景。"
+        ]
+      },
+      "suggested_css_scale_for_86_percent_core": 0.98129,
+      "sha256": "7ab19dbc4b9229cd211b1b039c73afd531d74f391005734bf698fe56a2185b4d",
+      "applied_component_scale": 0.98129,
+      "residual_rim_glow_accepted": true
+    }
+  ],
+  "limitations": [
+    "内置image_gen背景提取为生成重建，非像素级无损抠图。",
+    "均为1254×1254 RGBA原生输出，主物体边距约3–7%，少于部分提示的6–8%；alpha_core_bbox及建议网站视觉缩放比例已记录。",
+    "紫珠存在少量低alpha外沿辉光；一次定向重试未完全去除。未使用Python或其他工具重新抠图、改变透明通道或修改图像像素。"
+  ],
+  "paths_relative_to": "repository root",
+  "cache_version": "20261003-r4",
+  "reference_policy": "User-provided reference photographs are not included. Public paths point only to delivered PNG assets.",
+  "normalization": "Per-asset component scale only; source PNG pixels and alpha are unchanged."
+}

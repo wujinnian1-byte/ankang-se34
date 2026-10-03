@@ -1,0 +1,137 @@
+/* Scoped to the six glass orbs in Fizzi's product carousel. */
+.orb-carousel {
+  position: relative; isolation: isolate; display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto; justify-items: center;
+  height: 100vh; height: 100svh; min-height: 580px; width: 100%;
+  padding: clamp(32px, 5vh, 64px) 24px 24px; gap: 16px; overflow: hidden;
+  color: #173746; transition: background-color .8s ease;
+}
+.orb-carousel:focus { outline: none; }
+.orb-carousel:focus-visible { outline: 3px solid #173746; outline-offset: -6px; }
+.orb-carousel .orb-heading {
+  position: relative; z-index: 1; margin: 0;
+  font-size: clamp(30px, 4.5vw, 56px); line-height: 1.2; font-weight: 800;
+  letter-spacing: .05em; text-align: center;
+}
+.orb-waves {
+  position: absolute; z-index: -1; top: 50%; left: 50%;
+  width: 120vmin; height: 120vmin; max-width: none;
+  transform: translate(-50%, -50%); pointer-events: none;
+}
+.orb-waves path { fill: var(--orb-color); transition: fill .8s ease; transform-origin: center; }
+.orb-wave-outer { opacity: .15; animation: orb-wave-spin 30s linear infinite reverse; }
+.orb-wave-inner { opacity: .15; animation: orb-wave-spin 22s linear infinite; }
+.orb-controls {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; justify-content: center; gap: clamp(8px, 3vw, 56px);
+  width: min(100%, 1100px); min-height: 0;
+}
+.orb-arrow {
+  position: relative; z-index: 3; display: grid; place-items: center;
+  width: clamp(48px, 6vw, 80px); aspect-ratio: 1; flex-shrink: 0;
+  padding: 15px; border: 2px solid currentColor; border-radius: 50%;
+  color: #173746; background: #ffffff4d; cursor: pointer;
+  transition: background .2s, transform .2s; -webkit-tap-highlight-color: transparent;
+}
+.orb-arrow svg { width: 100%; height: 100%; pointer-events: none; }
+.orb-arrow:hover { background: #ffffffa6; transform: scale(1.07); }
+.orb-arrow:active { transform: scale(.94); }
+.orb-arrow:focus-visible, .orb-swatch:focus-visible { outline: 3px solid #173746; outline-offset: 5px; }
+.orb-stage {
+  position: relative; place-self: center; width: min(100%, 64vmin);
+  height: auto; max-height: 100%; aspect-ratio: 1;
+  touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab;
+}
+.orb-stage:active { cursor: grabbing; }
+.orb-layer { position: absolute; inset: 0; pointer-events: none; transform-origin: center; }
+.orb-layer-in { animation: orb-enter .78s cubic-bezier(.2,.75,.2,1) both; }
+.orb-layer-out { animation: orb-exit .48s ease-in both; }
+.orb-float { width: 100%; height: 100%; animation: orb-float 5.2s ease-in-out infinite; }
+.orb-product-image {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 25px 20px #102f4525); -webkit-user-drag: none;
+}
+.orb-shadow {
+  position: absolute; width: 48%; height: 7%; left: 26%; bottom: 0;
+  background: #17374626; border-radius: 50%; filter: blur(16px);
+  animation: orb-shadow 5.2s ease-in-out infinite;
+}
+.orb-caption { position: relative; z-index: 2; text-align: center; }
+.orb-carousel .orb-name {
+  margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.35;
+  font-weight: 700; letter-spacing: .08em; animation: orb-name-in .45s ease both;
+}
+.orb-carousel .orb-count { margin: 8px 0 4px; font-size: 13px; line-height: 1.4; letter-spacing: .2em; opacity: .65; }
+.orb-swatches { display: flex; justify-content: center; align-items: center; gap: 5px; }
+.orb-swatch {
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 10px;
+  border: 0; border-radius: 50%; background: transparent; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.orb-swatch span {
+  display: block; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--swatch-color); box-shadow: inset 2px 3px 4px #ffffff70;
+  transition: transform .2s, outline-color .2s; outline: 2px solid transparent; outline-offset: 5px;
+}
+.orb-swatch:hover span { transform: scale(1.15); }
+.orb-swatch[aria-pressed=true] span { outline-color: #173746; }
+@keyframes orb-wave-spin { to { transform: rotate(360deg); } }
+@keyframes orb-float { 0%,100% { transform: translateY(4%) rotate(-4deg); } 50% { transform: translateY(-3%) rotate(5deg); } }
+@keyframes orb-shadow { 0%,100% { transform: scale(1.06); opacity: .8; } 50% { transform: scale(.88); opacity: .45; } }
+@keyframes orb-enter {
+  from { opacity: 0; transform: translateX(calc(var(--orb-direction) * 28%)) rotate(calc(var(--orb-direction) * 38deg)) scale(.75); }
+  65% { opacity: 1; }
+  to { opacity: 1; transform: translateX(0) rotate(0deg) scale(1); }
+}
+@keyframes orb-exit { from { opacity: 1; } to { opacity: 0; transform: translateX(calc(var(--orb-direction) * -25%)) rotate(calc(var(--orb-direction) * -35deg)) scale(.7); } }
+@keyframes orb-name-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) {
+  .orb-carousel { min-height: 500px; padding: 36px 14px 22px; gap: 12px; }
+  .orb-controls { gap: 2px; width: 100%; }
+  .orb-arrow { width: 46px; padding: 12px; }
+  .orb-stage { width: min(100%, 68vmin); }
+  .orb-heading { max-width: 100%; }
+  .orb-waves { width: 135vw; height: 135vw; }
+  .orb-swatches { gap: 2px; }
+}
+@media (max-height: 600px) and (min-width: 768px) {
+  .orb-carousel { min-height: 500px; padding-top: 24px; }
+  .orb-stage { width: min(100%, 52vmin); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb-carousel, .orb-carousel *, .orb-carousel *::before, .orb-carousel *::after { animation: none !important; transition: none !important; }
+  .orb-layer-out { display: none; }
+}
+
+/* Seven independently floating collectibles, arranged like the reference poster. */
+.blindbox-gallery{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 10%,#fafdff 0%,#e9f4fd 34%,#c4def3 72%,#f0f8ff 100%);color:#34536e;padding:88px 24px 45px;}
+.blindbox-heading{text-align:center;position:relative;z-index:2;}
+.blindbox-heading p{font-size:11px;letter-spacing:.4em;color:#67869e;margin:0 0 20px;}
+html[data-brand=fizzi] .blindbox-heading h2{font-family:'Songti SC','SimSun',serif;font-size:clamp(30px,4vw,58px);font-weight:400;letter-spacing:.12em;margin:0;line-height:1.4;}
+.blindbox-heading span{display:block;font-size:12px;letter-spacing:.45em;color:#66859e;margin-top:18px;}
+.blindbox-sky{position:relative;width:min(100%,1080px);aspect-ratio:1/1.02;margin:24px auto 0;}
+/* Broad mist drifts behind the glass; a lighter veil crosses between the orbs. */
+.blindbox-gallery::before,.blindbox-gallery::after{content:'';position:absolute;pointer-events:none;z-index:-1;inset:0 -22%;background-repeat:no-repeat;will-change:transform;}
+.blindbox-gallery::before{background:radial-gradient(ellipse 48% 9% at 16% 30%,#eefaff 8%,#a9d7f4c9 35%,transparent 72%),radial-gradient(ellipse 62% 11% at 78% 51%,#f4fcff 5%,#a4d1f3c9 34%,transparent 72%),radial-gradient(ellipse 52% 10% at 18% 77%,#b7dffcdd 10%,transparent 74%),radial-gradient(ellipse 70% 14% at 66% 100%,#e7f8ff 10%,#a0d0f28c 40%,transparent 78%);filter:blur(14px);animation:blindbox-mist 26s ease-in-out infinite alternate;}
+.blindbox-gallery::after{background:radial-gradient(ellipse 52% 8% at 74% 26%,#68a9df63,transparent 74%),radial-gradient(ellipse 60% 9% at 25% 57%,#78b5e866,transparent 76%),radial-gradient(ellipse 48% 8% at 80% 80%,#8bbef059,transparent 76%);filter:blur(24px);animation:blindbox-mist 34s ease-in-out -12s infinite alternate-reverse;}
+.blindbox-sky::before,.blindbox-sky::after{content:'';position:absolute;pointer-events:none;inset:0 -20%;}
+.blindbox-sky::before{background:radial-gradient(ellipse 55% 5% at 32% 26%,#f4fcff 2%,#a6d8ffb3 35%,transparent 75%),radial-gradient(ellipse 65% 6% at 63% 58%,#eaf8ff 5%,#99cef5a6 38%,transparent 75%),radial-gradient(ellipse 60% 7% at 30% 88%,#f0fbff 5%,#acd9fbb0 35%,transparent 78%);filter:blur(10px);transform:rotate(-12deg);animation:blindbox-cloud-ribbon 23s ease-in-out infinite alternate;}
+.blindbox-sky::after{z-index:1;background:radial-gradient(ellipse 60% 3% at 24% 39%,#d5f0ffa6,#a4d7ff52 38%,transparent 76%),radial-gradient(ellipse 50% 4% at 78% 73%,#e0f6ff99,#94cefa52 38%,transparent 78%);filter:blur(12px);animation:blindbox-cloud-ribbon 29s ease-in-out -9s infinite alternate-reverse;}
+@keyframes blindbox-mist{from{transform:translate3d(-4%,12px,0)}to{transform:translate3d(5%,-20px,0)}}
+@keyframes blindbox-cloud-ribbon{from{transform:translate3d(-3%,8px,0) rotate(-12deg)}to{transform:translate3d(4%,-12px,0) rotate(-8deg)}}
+@media(prefers-reduced-motion:reduce){.blindbox-gallery::before,.blindbox-gallery::after,.blindbox-sky::before,.blindbox-sky::after{animation:none;will-change:auto;}}
+.blindbox-position{position:absolute;width:28%;aspect-ratio:1;}
+.blindbox-position-0{left:56%;top:0%;}
+.blindbox-position-1{left:20%;top:12%;}
+.blindbox-position-2{left:1%;top:35%;}
+.blindbox-position-3{left:73%;top:29%;}
+.blindbox-position-4{left:38%;top:46%;}
+.blindbox-position-5{left:12%;top:68%;}
+.blindbox-position-6{left:63%;top:76%;}
+.blindbox-float{width:100%;height:100%;animation:blindbox-levitate var(--duration) ease-in-out var(--delay) infinite;}
+.blindbox-orb{width:100%;height:100%;background-image:url('/brand/orbs/se34-seven-atlas.png');background-size:400% 200%;background-repeat:no-repeat;filter:drop-shadow(0 18px 22px #3976a530);transition:filter .4s;}
+.blindbox-orb:hover{filter:drop-shadow(0 8px 28px #81cafa66) brightness(1.05);}
+html[data-brand=fizzi] .blindbox-signature{margin:50px 0 0;text-align:center;font-family:'Songti SC','SimSun',serif;font-size:13px;letter-spacing:.5em;color:#64859e;}
+@keyframes blindbox-levitate{0%,100%{transform:translateY(8px) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+@media(max-width:767px){.blindbox-gallery{padding:58px 12px 35px;}.blindbox-heading p{font-size:8px;letter-spacing:.25em;}.blindbox-heading span{font-size:10px;}.blindbox-sky{aspect-ratio:1/1.38;margin-top:35px;}.blindbox-position{width:36%;}.blindbox-position-0{left:56%;top:0;}.blindbox-position-1{left:9%;top:12%;}.blindbox-position-2{left:0;top:36%;}.blindbox-position-3{left:66%;top:29%;}.blindbox-position-4{left:32%;top:48%;}.blindbox-position-5{left:4%;top:69%;}.blindbox-position-6{left:62%;top:76%;}html[data-brand=fizzi] .blindbox-signature{margin-top:30px;font-size:11px;}}
+@media(prefers-reduced-motion:reduce){.blindbox-float{animation:none;}.blindbox-orb{transition:none;}}
