@@ -39,14 +39,14 @@ def main():
     # Timestamp sampling supports variable-frame-rate sources. Include the stable final frame.
     sample_end = duration - 1 / 24
     sample_fps = (FRAME_COUNT - 1) / sample_end
+    # Preserve the source's 720p detail on every device. The former 360p mobile
+    # sequence was enlarged to screen height, visibly softening the bottle.
     run('ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(source),
         '-an', '-vf', f'setpts=PTS-STARTPTS,fps={sample_fps:.9f}:start_time=0:round=near,tpad=stop_mode=clone:stop_duration=1,scale=1280:720:flags=lanczos',
-        '-frames:v', str(FRAME_COUNT), '-start_number', '0', '-q:v', '3',
+        '-frames:v', str(FRAME_COUNT), '-start_number', '0', '-q:v', '2',
         str(frames / 'se34-%04d.jpg'))
-    run('ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(source),
-        '-an', '-vf', f'setpts=PTS-STARTPTS,fps={sample_fps:.9f}:start_time=0:round=near,tpad=stop_mode=clone:stop_duration=1,scale=640:360:flags=lanczos',
-        '-frames:v', str(FRAME_COUNT), '-start_number', '0', '-q:v', '3',
-        str(mobile_frames / 'se34-%04d.jpg'))
+    for frame in sorted(frames.glob('se34-*.jpg')):
+        (mobile_frames / frame.name).write_bytes(frame.read_bytes())
     run('ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(source),
         '-map', '0:v:0', '-an', '-vf', 'fps=24,scale=1280:720:flags=lanczos,setsar=1',
         '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p',
@@ -63,11 +63,16 @@ def main():
                    'sha256': digest(source), 'durationSeconds': duration,
                    'width': probe['streams'][0]['width'], 'height': probe['streams'][0]['height'],
                    'provenance': 'Completed video supplied by the brand owner on 2026-10-04'},
-        'desktop': {'frameCount': FRAME_COUNT, 'sampleBy': 'timestamp',
+        'desktop': {'frameCount': FRAME_COUNT, 'width': 1280, 'height': 720,
+                    'jpegQuality': 2, 'sampleBy': 'timestamp',
                     'sampleEndSeconds': sample_end, 'sampleFps': sample_fps,
                     'playback': 'Scroll-driven frame sequence, not wall-clock playback'},
-        'mobile': {'frameCount': FRAME_COUNT, 'width': 640, 'height': 360,
+        'mobile': {'frameCount': FRAME_COUNT, 'width': 1280, 'height': 720,
+                   'jpegQuality': 2, 'source': 'Byte-identical copy of desktop frames; no 360p downscale',
                    'playback': 'Same blackout and scroll-driven sequence; no embedded video player'},
+        'rendering': {'canvasDevicePixelRatioCap': 2, 'imageSmoothingQuality': 'high',
+                      'assetVersion': '20261004-water-hd1',
+                      'note': 'Preserves source detail; no AI upscaling or invented product lettering'},
         'timing': {'sectionHeightVh': 420, 'blackHoldEnd': 0.05,
                    'revealStart': 0.05, 'revealEnd': 0.13,
                    'motionStart': 0.10, 'motionEnd': 0.87, 'motionEase': 'power2.out',

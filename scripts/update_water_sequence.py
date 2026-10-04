@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "20261004-water-v4"
+VERSION = "20261004-water-hd1"
 chunk_path = ROOT / "dist/experiences/baikal/_next/static/chunks/539-56c7674de5e8a087.js"
 source = (ROOT / "design-source/water-sequence-module.js").read_text()
 prefix = "const WATER_SEQUENCE_MODULE = "

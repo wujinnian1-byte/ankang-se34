@@ -14,6 +14,7 @@ const chunk = read(chunkPath);
 const source = read('design-source/water-sequence-module.js');
 const html = read('dist/experiences/baikal/index.html');
 const css = read('dist/brand/water-entry.css');
+const assetVersion = '20261004-water-hd1';
 const registrations = [];
 vm.runInNewContext(chunk, {self:{webpackChunk_N_E:registrations}}, {filename:chunkPath});
 const modules = Object.assign({}, ...registrations.map(entry => entry[1]));
@@ -48,19 +49,32 @@ function jpegSize(buffer) {
 const imageSizes = Object.fromEntries(['frames', 'frames-mobile'].map(folder => [folder,
   jpegSize(fs.readFileSync(path.join(root, 'dist/brand/water-entry', folder, 'se34-0000.jpg')))]));
 
-function fixture(moduleId, width, height, {safari = true, complete = true, initialScroll = 0} = {}) {
+function fixture(moduleId, width, height, {safari = true, complete = true, initialScroll = 0, dpr = 1} = {}) {
   const effects = [], gsapEffects = [], cleanups = [], timelines = [], images = [], drawing = [], sets = [], atomWrites = [], media = [];
   const listeners = new Map();
   const canvasContext = {
-    fillStyle:'',
+    fillStyle:'', imageSmoothingEnabled:false, imageSmoothingQuality:'low',
     fillRect(...args) { drawing.push({method:'fillRect', args, fillStyle:this.fillStyle}); },
     drawImage(...args) { drawing.push({method:'drawImage', args}); },
+    scale() { throw new Error('DPR uses physical draw coordinates; scaling the context would apply it twice'); },
+    setTransform() { throw new Error('Physical draw coordinates must retain the identity transform'); },
   };
-  const window = {innerWidth:width, innerHeight:height, scrollY:initialScroll,
+  const window = {innerWidth:width, innerHeight:height, scrollY:initialScroll, devicePixelRatio:dpr,
     addEventListener(type, callback) { listeners.set(type, callback); },
     removeEventListener(type, callback) { if (listeners.get(type) === callback) listeners.delete(type); }};
   const jsx = (type, props = {}) => {
     const node = {type, props, style:{zIndex:''}, getContext:() => canvasContext};
+    if (type === 'canvas') {
+      // Assigning either backing dimension resets the real Canvas 2D state.
+      for (const dimension of ['width', 'height']) {
+        let size = dimension === 'width' ? 300 : 150;
+        Object.defineProperty(node, dimension, {get:() => size, set:value => {
+          size = value;
+          canvasContext.imageSmoothingEnabled = true;
+          canvasContext.imageSmoothingQuality = 'low';
+        }});
+      }
+    }
     if (props.ref) props.ref.current = node;
     return node;
   };
@@ -140,7 +154,7 @@ function fixture(moduleId, width, height, {safari = true, complete = true, initi
   for (const callback of [...effects, ...gsapEffects]) {
     const cleanup = callback(); if (typeof cleanup === 'function') cleanups.push(cleanup);
   }
-  return {tree, window, listeners, timelines, images, drawing, sets, atomWrites, media,
+  return {tree, window, listeners, timelines, images, drawing, sets, atomWrites, media, canvasContext,
     cleanup() { cleanups.reverse().forEach(callback => callback()); }};
 }
 
@@ -176,6 +190,7 @@ async function main() {
     assert.equal(modules[9814].toString(), vm.runInNewContext(`${source}\nWATER_SEQUENCE_MODULE;`).toString());
     assert.equal(modules[9814].toString().includes('BAIAKL_Bubbles'), false);
     for (const folder of ['frames', 'frames-mobile']) {
+      assert.deepEqual(imageSizes[folder], {width:1280, height:720}, 'both responsive sources retain native 720p detail');
       const directory = path.join(root, 'dist/brand/water-entry', folder);
       const files = fs.readdirSync(directory).filter(name => /^se34-\d{4}\.jpg$/.test(name));
       assert.equal(files.length, 171);
@@ -187,19 +202,23 @@ async function main() {
     }
   });
 
-  for (const [width, height] of [[375, 844], [768, 1024], [1279, 720], [1280, 1000], [1470, 720]]) {
-    await test(`${width}x${height}: stable canvas, correct 171-frame source and uninterrupted black/fade/motion/hold/fade timeline`, () => {
-      const f = fixture(9814, width, height);
+  const viewports = [[375, 844], [400, 636], [768, 1024], [1279, 720], [1280, 1000], [1470, 720]];
+  for (const [width, height, dpr] of viewports.flatMap(([width, height]) => [1, 1.5, 2, 3].map(dpr => [width, height, dpr]))) {
+    await test(`${width}x${height} DPR ${dpr}: sharp backing, unchanged composition and black/fade/motion/hold/fade timeline`, () => {
+      const f = fixture(9814, width, height, {dpr});
+      const density = Math.min(2, dpr), backingWidth = Math.round(width * density), backingHeight = Math.round(height * density);
       const canvases = descendants(f.tree, node => node.type === 'canvas');
       assert.equal(canvases.length, 1);
       assert.equal(descendants(f.tree, node => ['video', 'button', 'picture'].includes(node.type)).length, 0);
       assert.equal(byClass(f.tree, 'rootMobileBg').length, 0);
       assert.equal(canvases[0].props.role, 'img');
       assert.ok(canvases[0].props['aria-label']);
-      assert.equal(canvases[0].width, width); assert.equal(canvases[0].height, height);
+      assert.equal(canvases[0].width, backingWidth); assert.equal(canvases[0].height, backingHeight);
+      assert.equal(f.canvasContext.imageSmoothingEnabled, true);
+      assert.equal(f.canvasContext.imageSmoothingQuality, 'high', 'restore quality after backing-size assignment resets Canvas state');
       assert.equal(f.images.length, 171);
       f.images.forEach((image, index) => assert.equal(image.src,
-        `/brand/water-entry/${width < 1280 ? 'frames-mobile' : 'frames'}/se34-${String(index).padStart(4, '0')}.jpg`));
+        `/brand/water-entry/${width < 1280 ? 'frames-mobile' : 'frames'}/se34-${String(index).padStart(4, '0')}.jpg?v=${assetVersion}`));
       const playback = f.timelines.filter(timeline => timeline.steps.some(step => Object.hasOwn(step.vars, 'current')));
       assert.equal(playback.length, 1);
       const timeline = playback[0], trigger = timeline.options.scrollTrigger;
@@ -220,25 +239,47 @@ async function main() {
         const draw = f.drawing.filter(entry => entry.method === 'drawImage').at(-1);
         assert.equal(draw.args.length, 5, 'no source rectangle crop'); assert.equal(draw.args[0], f.images[frame]);
         const [image, x, y, drawnWidth, drawnHeight] = draw.args;
-        const scale = width < 1280 ? Math.min(height * 0.94 / image.naturalHeight, width * 0.9 / (image.naturalWidth * 0.24)) : 0.96 * Math.min(width / image.naturalWidth, height / image.naturalHeight);
+        const fitScale = (w, h) => width < 1280 ? Math.min(h * 0.94 / image.naturalHeight, w * 0.9 / (image.naturalWidth * 0.24)) : 0.96 * Math.min(w / image.naturalWidth, h / image.naturalHeight);
+        const scale = fitScale(backingWidth, backingHeight);
         near(drawnWidth, image.naturalWidth * scale, 'image width'); near(drawnHeight, image.naturalHeight * scale, 'image height');
-        near(x, (width - drawnWidth) / 2, 'horizontal centering'); near(y, (height - drawnHeight) / 2, 'vertical centering');
+        near(x, (backingWidth - drawnWidth) / 2, 'horizontal centering'); near(y, (backingHeight - drawnHeight) / 2, 'vertical centering');
+        const previousScale = fitScale(width, height), previousWidth = image.naturalWidth * previousScale, previousHeight = image.naturalHeight * previousScale;
+        const previousGeometry = [(width - previousWidth) / 2, (height - previousHeight) / 2, previousWidth, previousHeight];
+        [x, y, drawnWidth, drawnHeight].forEach((coordinate, index) => {
+          // Half-pixel backing rounding can be magnified by the 0.24 bottle-band width guard.
+          assert.ok(Math.abs(coordinate / density - previousGeometry[index]) <= 2 / density + 1e-8,
+            'CSS-visible composition changes only by integer backing-size rounding');
+          if (width * density === backingWidth && height * density === backingHeight) {
+            near(coordinate / density, previousGeometry[index], 'CSS-visible composition is exactly unchanged');
+          }
+        });
         if (width >= 1280) {
-          assert.ok(x >= width * 0.02 - 1e-8 && y >= height * 0.02 - 1e-8, 'whole image retains at least 2% margins');
-          assert.ok(x + drawnWidth <= width * 0.98 + 1e-8 && y + drawnHeight <= height * 0.98 + 1e-8);
+          assert.ok(x >= backingWidth * 0.02 - 1e-8 && y >= backingHeight * 0.02 - 1e-8, 'whole image retains at least 2% margins');
+          assert.ok(x + drawnWidth <= backingWidth * 0.98 + 1e-8 && y + drawnHeight <= backingHeight * 0.98 + 1e-8);
         } else {
-          assert.ok(drawnHeight <= height * 0.94 + 1e-8, 'full bottle height is protected');
-          assert.ok(drawnWidth * 0.24 <= width * 0.9 + 1e-8, 'central bottle band fits 90% viewport width');
+          assert.ok(drawnHeight <= backingHeight * 0.94 + 1e-8, 'full bottle height is protected');
+          assert.ok(drawnWidth * 0.24 <= backingWidth * 0.9 + 1e-8, 'central bottle band fits 90% viewport width');
         }
         const fill = f.drawing.filter(entry => entry.method === 'fillRect').at(-1);
-        assert.equal(fill.fillStyle, '#010101'); assert.deepEqual(fill.args, [0, 0, width, height]);
+        assert.equal(fill.fillStyle, '#010101'); assert.deepEqual(fill.args, [0, 0, backingWidth, backingHeight]);
       }
       f.cleanup(); assert.ok(timeline.killed, 'timeline cleaned up'); assert.equal(f.listeners.has('resize'), false);
     });
   }
 
-  await test('late image loads redraw the current frame only; resize redraws and duplicate frame updates are skipped', () => {
-    const f = fixture(9814, 375, 844, {complete:false});
+  await test('missing or sub-unit DPR falls back to a 1x backing buffer', () => {
+    for (const dpr of [undefined, null, 0, 0.5, -1]) {
+      const f = fixture(9814, 375, 845, {dpr});
+      if (dpr === undefined) { delete f.window.devicePixelRatio; f.listeners.get('resize')(); }
+      const canvas = descendants(f.tree, node => node.type === 'canvas')[0];
+      assert.equal(canvas.width, 375); assert.equal(canvas.height, 845);
+      assert.equal(f.canvasContext.imageSmoothingQuality, 'high');
+      f.cleanup();
+    }
+  });
+
+  await test('late loads and rounded resize/DPR changes redraw the current frame, restore quality and keep the same timeline', () => {
+    const f = fixture(9814, 375, 844, {complete:false, dpr:2});
     assert.equal(f.drawing.length, 0);
     const motion = f.timelines.flatMap(timeline => timeline.steps).find(step => Object.hasOwn(step.vars, 'current'));
     motion.target.current = 100; motion.vars.onUpdate(); assert.equal(f.drawing.length, 0);
@@ -246,9 +287,19 @@ async function main() {
     f.images[100].complete = true; f.images[100].emit('load');
     assert.equal(f.drawing.at(-1).args[0], f.images[100]);
     const count = f.drawing.length; motion.vars.onUpdate(); assert.equal(f.drawing.length, count);
-    f.window.innerWidth = 768; f.window.innerHeight = 1024; f.listeners.get('resize')();
-    assert.equal(descendants(f.tree, node => node.type === 'canvas')[0].width, 768);
-    assert.equal(f.drawing.at(-1).args[0], f.images[100]); f.cleanup();
+    const canvas = descendants(f.tree, node => node.type === 'canvas')[0], timelineCount = f.timelines.length;
+    f.window.innerWidth = 767; f.window.innerHeight = 1023; f.window.devicePixelRatio = 1.5;
+    f.listeners.get('resize')();
+    assert.equal(canvas.width, 1151); assert.equal(canvas.height, 1535, 'fractional backing dimensions round to nearest integer');
+    assert.equal(f.drawing.at(-1).args[0], f.images[100]);
+    assert.equal(f.canvasContext.imageSmoothingEnabled, true); assert.equal(f.canvasContext.imageSmoothingQuality, 'high');
+    f.window.devicePixelRatio = 3; f.listeners.get('resize')();
+    assert.equal(canvas.width, 1534); assert.equal(canvas.height, 2046, 'DPR-only resize applies the 2x cap');
+    assert.equal(f.drawing.at(-1).args[0], f.images[100]);
+    assert.deepEqual(f.drawing.filter(entry => entry.method === 'fillRect').at(-1).args, [0, 0, 1534, 2046]);
+    assert.equal(f.canvasContext.imageSmoothingQuality, 'high');
+    assert.equal(f.timelines.length, timelineCount); assert.equal(f.images.length, 171, 'resizing does not restart playback or image loading');
+    assert.equal(motion.target.current, 100); f.cleanup();
   });
 
   await test('sequence header atom transitions remain desktop-only, with original return and cleanup behavior', () => {
