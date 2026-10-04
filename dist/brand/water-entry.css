@@ -1,0 +1,44 @@
+/* One continuous Lead -> black -> water scene at every viewport size. */
+html[data-brand="baikal"] .Lead_root__N97wS {
+  height: 300vh;
+  margin-bottom: -100vh;
+  z-index: 1;
+}
+html[data-brand="baikal"] .Lead_rootWrapper__FU8Ms > .Lead_rootTransition__wS_dK {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #010101;
+  pointer-events: none;
+}
+html[data-brand="baikal"] .SectionSequence_root__oHi4Z {
+  display: block;
+  position: relative;
+  z-index: 0;
+  height: 420vh;
+  padding: 0;
+  gap: 0;
+  background: #010101;
+}
+html[data-brand="baikal"] .SectionSequence_rootBgWrapper__mw41g {
+  display: block;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #010101;
+}
+html[data-brand="baikal"] .SectionSequence_rootCanvas__had7n {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+/* The retired infographic and decorative wave must not interrupt the black beat. */
+html[data-brand="baikal"] .SectionSequence_rootContent__0R_47,
+html[data-brand="baikal"] .SectionSequence_rootLine__AcqkT,
+html[data-brand="baikal"] .SectionSequence_root__oHi4Z .DepthRange_rootRanges__Vh2Se {
+  display: none !important;
+}
